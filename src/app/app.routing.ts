@@ -17,7 +17,22 @@ const routes: Routes =[
       path: '',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
     }]
-  }
+  },
+  {
+    path: "otrodashboard",
+    loadChildren: () => import("./otrodashboard/dashboard.module").then(m => m.DashboardModule),
+    // canActivate: [AuthGuard]
+  },
+
+  {
+    path: "modulo/componente/padre",
+    loadChildren: () => import("./usuario/usuario.module").then(m => m.UsuarioModule),
+    // canActivate: [AuthGuard]
+  },
+
+
+
+
 ];
 
 @NgModule({
